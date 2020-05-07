@@ -1,0 +1,55 @@
+@use '@material/button/_index'as button;
+
+
+.btn--save {
+	@include button.container-fill-color(primary);
+	@include button.shape-radius(30px);
+	@include button.ink-color(on-primary);
+	@include button.height(48px);
+	@include button.horizontal-padding(28px);
+
+	font-family: $p-bold;
+
+	// unquote
+	&:hover {
+		@include button.container-fill-color(#3197FF);
+	}
+
+	&:active {
+		@include button.container-fill-color(#0073EA);
+	}
+}
+
+
+
+.btn-drawer {
+	@include button.container-fill-color(transparent);
+	@include button.ink-color(on-primary);
+}
+
+.btn--close,
+.btn--back {
+	@include button.ink-color(#7D8186);
+
+	& svg {
+		stroke: #7D8186;
+	}
+
+	&:hover {
+		@include button.ink-color(#1A8BFF);
+		@include button.icon-color(#1A8BFF);
+
+		& svg {
+			stroke: #1A8BFF;
+		}
+	}
+
+	&:active {
+		@include button.ink-color(#FFFFFF);
+		@include button.icon-color(#FFFFFF);
+
+		& svg {
+			stroke: #FFFFFF;
+		}
+	}
+}

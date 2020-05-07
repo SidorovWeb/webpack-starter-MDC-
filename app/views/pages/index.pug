@@ -1,0 +1,63 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+	- const title = "PIXTA"
+	- const name = "main-page"
+
+block content
+	section.hero
+		.container
+			header.header
+				a(href="/").logo.header__logo
+					include ../../img/logo/logo.svg
+				.header__block-right
+					.header__select
+						.mdc-select.mdc-select--outlined.my-select
+							.mdc-select__anchor(aria-label='outlined-select-label')
+								input#demo-selected-text.mdc-select__selected-text(type='text', disabled='', readonly='')
+								span.mdc-notched-outline
+									span.mdc-notched-outline__leading
+									span.mdc-notched-outline__notch
+									span.mdc-notched-outline__trailing
+								i.mdc-select__dropdown-icon.my-select__drop-icon
+									include ../../img/icon/drop.svg
+							.mdc-select__menu.mdc-menu.mdc-menu-surface(role='listbox')
+								ul.mdc-list.mdc-list-item__text.mdc-theme--primary
+									li.mdc-list-item.mdc-list-item--selected(data-value='Storis 1920x1080'  aria-selected='true') Storis 1920x1080
+									li.mdc-list-item(data-value='Post 1080x1080') Post 1080x1080
+									li.mdc-list-item(data-value='Custom 2000x200') Custom 2000x200
+
+					.header__btn
+						button(aria-label='button').mdc-button.mdc-button--unelevated.btn--save
+							span.mdc-button__label Save
+			.wrapper
+				//- picture
+				//- 	source(srcset='./img/mts.webp', type='image/webp')
+				//- 	img(src='./img/mts.jpg', alt='Моя картинка')
+
+
+			footer.footer footer
+		.md-aside
+			aside.mdc-drawer.my-mdc-drawer
+				.mdc-drawer__header
+					button(aria-label='button').color--accent.mdc-button.mdc-button--unelevated.btn-drawer.btn--back
+						i.material-icons.mdc-button__icon(aria-hidden='true')
+							include ../../img/icon/arrow-left.svg
+						span.mdc-button__label Files
+					button(aria-label='button').mdc-button.mdc-button--unelevated.btn-drawer.btn--close
+						include ../../img/icon/close.svg
+
+				.mdc-drawer__content
+					nav.mdc-list
+					a.mdc-list-item.mdc-list-item--activated(href='#', aria-current='page')
+						i.material-icons.mdc-list-item__graphic(aria-hidden='true') inbox
+						span.mdc-list-item__text Inbox
+					a.mdc-list-item(href='#')
+						i.material-icons.mdc-list-item__graphic(aria-hidden='true') send
+						span.mdc-list-item__text Outgoing
+					a.mdc-list-item(href='#')
+						i.material-icons.mdc-list-item__graphic(aria-hidden='true') drafts
+						span.mdc-list-item__text Drafts
+block scripts
+	//- script(src="js/main.js")

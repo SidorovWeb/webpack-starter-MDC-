@@ -1,0 +1,46 @@
+:root {
+	--font-size: 16px;
+	--container-width: 1220px;
+	// --mdc-typography-font-family: $p-bold;
+}
+
+
+$mdc-theme-primary: #FEDBD0;
+$mdc-theme-on-primary: #442C2E;
+$mdc-theme-secondary: #FEEAE6;
+$mdc-theme-on-secondary: #442C2E;
+$mdc-theme-surface: #FFFBFA;
+$mdc-theme-on-surface: #442C2E;
+$mdc-theme-background: #FFFFFF;
+$mdc-theme-on-background: #442C2E;
+
+
+
+.theme-dark {
+	--color-accent: #1A8BFF;
+	--primary: #7D8186;
+	--secondary: #7D8186;
+	--color-nav: #202427;
+	--main-bg: #393E43;
+	--color-text: #ffffff;
+}
+
+
+$accent: #1A8BFF;
+$white: #ffffff;
+$black: #000000;
+$secondary: #7D8186;
+
+$disabled-unelevated: #484D53;
+
+
+// other
+$transition: .3s ease;
+
+// fonts
+$p-reg: 'ProximaNovaRegular',
+sans-serif;
+$p-bold: 'ProximaNovaBold',
+sans-serif;
+$p-light: 'ProximaNovaLight',
+sans-serif;

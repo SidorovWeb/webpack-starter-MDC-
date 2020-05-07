@@ -1,0 +1,15 @@
+@use "@material/drawer/_index"as drawer;
+@use "@material/list/_index"as list;
+@use "@material/ripple/_index"as ripple;
+
+.my-mdc-drawer {
+
+	@include drawer.surface-fill-color(#202427);
+	@include drawer.width(500px);
+	@include drawer.item-text-ink-color(white);
+}
+
+.mdc-drawer__header {
+	display: flex;
+	justify-content: space-between;
+}

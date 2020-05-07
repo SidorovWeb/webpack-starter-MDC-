@@ -1,0 +1,149 @@
+html,
+body {
+    height: 100%;
+    font-size: var(--font-size);
+}
+
+* {
+    box-sizing: border-box;
+
+    &:before,
+    &:after {
+        box-sizing: border-box;
+    }
+}
+
+body {
+    font-family: $p-reg;
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    min-width: 320px;
+    line-height: 1.5;
+    min-height: 100vh;
+    background-color: var(--main-bg);
+    color: var(--color-text);
+    overflow-wrap: normal;
+    overflow-x: hidden;
+
+    &.open {
+        overflow: hidden;
+
+        @include media-lg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    }
+
+}
+
+// footer к низу
+main {
+    flex-grow: 1;
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+// заглушка при ленивой загрузки
+img.lazy {
+    background-image: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7);
+    transition: transform .3s ease;
+}
+
+// polyfill для EI 11
+.img--poly {
+    font-family: 'object-fit: cover';
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+a,
+button {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    outline: none;
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+// норм эффект
+.hover {
+    transition: all .2s cubic-bezier(.02, .01, .47, 1);
+    box-shadow: 0 20px 20px rgba(0, 0, 0, .04);
+
+    &:hover {
+        transform: translateY(-4px);
+        transition-delay: 0s !important;
+        box-shadow: 0 40px 40px rgba(0, 0, 0, .09);
+    }
+}
+
+// viewportOnMobile
+.my-element {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+}
+
+// Выходим за пределы контейнера
+.break-out {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.wrapper {
+    flex-grow: 1;
+}
